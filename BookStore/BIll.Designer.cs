@@ -278,6 +278,7 @@
             this.labelUser.Size = new System.Drawing.Size(117, 34);
             this.labelUser.TabIndex = 26;
             this.labelUser.Text = "用户名";
+            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
             // 
             // lbTotal
             // 

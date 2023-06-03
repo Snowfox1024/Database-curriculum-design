@@ -128,6 +128,14 @@ namespace BookStore
         }
 
         private int id, nums, price, total, pos = 60;
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+            Information obj = new Information();
+            obj.Show();
+            this.Close();
+        }
+
         private string name, userName;
 
         private void Bill_Load(object sender, EventArgs e)
