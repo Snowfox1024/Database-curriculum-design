@@ -111,10 +111,11 @@ namespace BookStore
                 try
                 {
                     connection.Open();
-                    string sql = "insert into dbo(UName,Amount) values('" + labelUser.Text + "'," + cartTotal + ")";
+                    string sql = "insert into orders(UId,Amount) values(" + userId + "," + cartTotal + ")";
                     MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
                     DataSet ds = new DataSet();
-                    mda.Fill(ds, "books");
+                    mda.Fill(ds, "orders");
+
                     MessageBox.Show("订单信息保存成功！", "提示");
                     connection.Close();
                     ShowBooks();
@@ -137,11 +138,20 @@ namespace BookStore
         }
 
         private string name, userName;
+        private int userId;
 
         private void Bill_Load(object sender, EventArgs e)
         {
             userName = Login.UserName;
             labelUser.Text = userName;
+
+            connection.Open();
+            string sql = "select UId from users where UName='" + userName + "';";
+            MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            mda.Fill(dt);
+            userId = int.Parse(dt.Rows[0][0].ToString());
+            connection.Close();
         }
         
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

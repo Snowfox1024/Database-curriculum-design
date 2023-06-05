@@ -11,7 +11,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BookStore
 {
@@ -35,7 +34,7 @@ namespace BookStore
         private void ShowBooks()
         {
             connection.Open();
-            string sql = "select * from books";
+            string sql = "select * from books order by BId";
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "books");
@@ -199,6 +198,11 @@ namespace BookStore
             Dashboard obj = new Dashboard();
             obj.Show();
             this.Close();
+        }
+
+        private void Shut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

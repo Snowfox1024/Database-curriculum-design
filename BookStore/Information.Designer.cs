@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Information));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbTotal = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btGoback = new System.Windows.Forms.Button();
-            this.btAddcart = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.Shut = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel3.SuspendLayout();
@@ -196,14 +196,14 @@
             this.OrdersView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.OrdersView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.OrdersView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OrdersView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrdersView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.OrdersView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.OrdersView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -214,15 +214,15 @@
             this.OrdersView.Location = new System.Drawing.Point(776, 429);
             this.OrdersView.Name = "OrdersView";
             this.OrdersView.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.OrdersView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrdersView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.OrdersView.RowHeadersVisible = false;
             this.OrdersView.RowHeadersWidth = 72;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("幼圆", 12F);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.OrdersView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("幼圆", 12F);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.OrdersView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.OrdersView.RowTemplate.Height = 33;
             this.OrdersView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OrdersView.Size = new System.Drawing.Size(731, 511);
@@ -258,26 +258,13 @@
             this.btGoback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGoback.Font = new System.Drawing.Font("幼圆", 10.71429F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btGoback.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btGoback.Location = new System.Drawing.Point(287, 889);
+            this.btGoback.Location = new System.Drawing.Point(288, 750);
             this.btGoback.Name = "btGoback";
             this.btGoback.Size = new System.Drawing.Size(144, 51);
             this.btGoback.TabIndex = 18;
             this.btGoback.Text = "返回";
             this.btGoback.UseVisualStyleBackColor = false;
             this.btGoback.Click += new System.EventHandler(this.btGoback_Click);
-            // 
-            // btAddcart
-            // 
-            this.btAddcart.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btAddcart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddcart.Font = new System.Drawing.Font("幼圆", 10.71429F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btAddcart.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btAddcart.Location = new System.Drawing.Point(261, 761);
-            this.btAddcart.Name = "btAddcart";
-            this.btAddcart.Size = new System.Drawing.Size(204, 51);
-            this.btAddcart.TabIndex = 15;
-            this.btAddcart.Text = "修改密码";
-            this.btAddcart.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -363,13 +350,13 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel4.Controls.Add(this.Shut);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.lbTotal);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.OrdersView);
             this.panel4.Controls.Add(this.btGoback);
-            this.panel4.Controls.Add(this.btAddcart);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.tbPhone);
             this.panel4.Controls.Add(this.label5);
@@ -393,6 +380,21 @@
             this.label2.Size = new System.Drawing.Size(155, 34);
             this.label2.TabIndex = 38;
             this.label2.Text = "基本信息";
+            // 
+            // Shut
+            // 
+            this.Shut.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Shut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Shut.Font = new System.Drawing.Font("微软雅黑", 10.71429F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Shut.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Shut.Location = new System.Drawing.Point(1482, 30);
+            this.Shut.Name = "Shut";
+            this.Shut.Size = new System.Drawing.Size(38, 42);
+            this.Shut.TabIndex = 48;
+            this.Shut.Text = "X";
+            this.Shut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Shut.UseVisualStyleBackColor = false;
+            this.Shut.Click += new System.EventHandler(this.Shut_Click);
             // 
             // Information
             // 
@@ -438,7 +440,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView OrdersView;
         private System.Windows.Forms.Button btGoback;
-        private System.Windows.Forms.Button btAddcart;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbPhone;
         private System.Windows.Forms.Label label5;
@@ -452,5 +453,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button Shut;
     }
 }

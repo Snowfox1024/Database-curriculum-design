@@ -28,10 +28,20 @@ namespace BookStore
         }
 
         private static string userName;
+        private int userId;
         private void Information_Load(object sender, EventArgs e)
         {
             userName = Login.UserName;
             labelUser.Text = userName;
+
+            connection.Open();
+            string sql = "select UId from users where UName='" + userName + "';";
+            MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            mda.Fill(dt);
+            userId = int.Parse(dt.Rows[0][0].ToString());
+            connection.Close();
+
             ShowOrders();
             ShowInfo();
         }
@@ -47,11 +57,11 @@ namespace BookStore
         private void ShowOrders()
         {
             connection.Open();
-            string sql = "select BillId,UAddress,Amount from orders where UName ='" + userName + "';";
+            string sql = "select BillId,UAddress,Amount from DeliveryView where UName ='" + userName + "';";
             MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
-            mda.Fill(ds, "orders");
-            OrdersView.DataSource = ds.Tables["orders"];
+            mda.Fill(ds, "delivery");
+            OrdersView.DataSource = ds.Tables["delivery"];
             connection.Close();
         }
 
@@ -73,6 +83,11 @@ namespace BookStore
             Bill obj = new Bill();
             obj.Show();
             this.Close();
+        }
+
+        private void Shut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

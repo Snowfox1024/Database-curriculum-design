@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.UsersView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.tbId = new System.Windows.Forms.TextBox();
             this.btReset = new System.Windows.Forms.Button();
@@ -66,11 +71,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.log = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shut = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -254,6 +255,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel4.Controls.Add(this.Shut);
             this.panel4.Controls.Add(this.UsersView);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.tbId);
@@ -285,14 +287,14 @@
             this.UsersView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UsersView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.UsersView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsersView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsersView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.UsersView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -305,20 +307,60 @@
             this.UsersView.Location = new System.Drawing.Point(17, 502);
             this.UsersView.Name = "UsersView";
             this.UsersView.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.UsersView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.UsersView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.UsersView.RowHeadersVisible = false;
             this.UsersView.RowHeadersWidth = 72;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("幼圆", 12F);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.UsersView.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("幼圆", 12F);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.UsersView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.UsersView.RowTemplate.Height = 33;
             this.UsersView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsersView.Size = new System.Drawing.Size(1398, 483);
             this.UsersView.TabIndex = 42;
             this.UsersView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersView_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "UId";
+            this.Column1.HeaderText = "用户ID";
+            this.Column1.MinimumWidth = 9;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "UName";
+            this.Column2.HeaderText = "用户名";
+            this.Column2.MinimumWidth = 9;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "UPhone";
+            this.Column3.HeaderText = "电话号码";
+            this.Column3.MinimumWidth = 9;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "UAddress";
+            this.Column4.HeaderText = "家庭住址";
+            this.Column4.MinimumWidth = 9;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "UPassword";
+            this.Column5.HeaderText = "密码";
+            this.Column5.MinimumWidth = 9;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // label3
             // 
@@ -503,45 +545,20 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // Column1
+            // Shut
             // 
-            this.Column1.DataPropertyName = "UId";
-            this.Column1.HeaderText = "用户ID";
-            this.Column1.MinimumWidth = 9;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "UName";
-            this.Column2.HeaderText = "用户名";
-            this.Column2.MinimumWidth = 9;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "UPhone";
-            this.Column3.HeaderText = "电话号码";
-            this.Column3.MinimumWidth = 9;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "UAddress";
-            this.Column4.HeaderText = "家庭住址";
-            this.Column4.MinimumWidth = 9;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "UPassword";
-            this.Column5.HeaderText = "密码";
-            this.Column5.MinimumWidth = 9;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.Shut.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Shut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Shut.Font = new System.Drawing.Font("微软雅黑", 10.71429F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Shut.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Shut.Location = new System.Drawing.Point(1359, 33);
+            this.Shut.Name = "Shut";
+            this.Shut.Size = new System.Drawing.Size(38, 42);
+            this.Shut.TabIndex = 48;
+            this.Shut.Text = "X";
+            this.Shut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Shut.UseVisualStyleBackColor = false;
+            this.Shut.Click += new System.EventHandler(this.Shut_Click);
             // 
             // Users
             // 
@@ -619,5 +636,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button Shut;
     }
 }

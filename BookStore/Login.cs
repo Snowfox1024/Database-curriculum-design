@@ -45,7 +45,7 @@ namespace BookStore
 
         private void btCheck_Click(object sender, EventArgs e)
         {
-            string sqlLogin = "select count(*) from users where UName = '" + tbUName.Text +
+            string sqlLogin = "select count(*) from userview where UName = '" + tbUName.Text +
                 "' and UPassword = '" + tbPassword.Text + "';";
             try
             {

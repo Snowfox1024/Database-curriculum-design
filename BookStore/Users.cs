@@ -174,5 +174,10 @@ namespace BookStore
             obj.Show();
             this.Close();
         }
+
+        private void Shut_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Shut = new System.Windows.Forms.Button();
             this.Adminlb = new System.Windows.Forms.Label();
@@ -41,30 +40,21 @@
             this.tbUName = new System.Windows.Forms.TextBox();
             this.log = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlText;
-            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(12, 16);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(310, 534);
             this.panel3.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(71, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(152, 28);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "广告位出租";
             // 
             // panel4
             // 
@@ -185,6 +175,16 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(39, 116);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(221, 207);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
             // Login
             // 
             this.BackColor = System.Drawing.Color.SteelBlue;
@@ -195,10 +195,10 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,7 +218,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Adminlb;
         private System.Windows.Forms.Button btCheck;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button Shut;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(book));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -76,6 +76,7 @@
             this.tbTitile = new System.Windows.Forms.TextBox();
             this.log = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Shut = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -259,6 +260,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.GhostWhite;
+            this.panel4.Controls.Add(this.Shut);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.tbId);
             this.panel4.Controls.Add(this.btUpdate);
@@ -356,14 +358,14 @@
             this.BooksView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BooksView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.BooksView.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BooksView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("幼圆", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BooksView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.BooksView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BooksView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -377,15 +379,15 @@
             this.BooksView.Location = new System.Drawing.Point(18, 541);
             this.BooksView.Name = "BooksView";
             this.BooksView.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BooksView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BooksView.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.BooksView.RowHeadersVisible = false;
             this.BooksView.RowHeadersWidth = 72;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("幼圆", 12F);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
-            this.BooksView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("幼圆", 12F);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            this.BooksView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.BooksView.RowTemplate.Height = 33;
             this.BooksView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.BooksView.Size = new System.Drawing.Size(1398, 441);
@@ -621,6 +623,21 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // Shut
+            // 
+            this.Shut.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Shut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Shut.Font = new System.Drawing.Font("微软雅黑", 10.71429F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Shut.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.Shut.Location = new System.Drawing.Point(1359, 33);
+            this.Shut.Name = "Shut";
+            this.Shut.Size = new System.Drawing.Size(38, 42);
+            this.Shut.TabIndex = 47;
+            this.Shut.Text = "X";
+            this.Shut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Shut.UseVisualStyleBackColor = false;
+            this.Shut.Click += new System.EventHandler(this.Shut_Click);
+            // 
             // book
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -703,5 +720,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button Shut;
     }
 }

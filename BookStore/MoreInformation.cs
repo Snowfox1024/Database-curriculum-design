@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace BookStore
 {
-    public partial class Dashboard : Form
+    public partial class MoreInformation : Form
     {
         private MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
         private MySqlConnection connection;
-        public Dashboard()
+        public MoreInformation()
         {
             InitializeComponent();
             builder.Server = "localhost";
@@ -48,43 +48,66 @@ namespace BookStore
             this.Close();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
+        private void btGoback_Click(object sender, EventArgs e)
+        {
+            Dashboard obj = new Dashboard();
+            obj.Show();
+            this.Close();
+        }
+
+        private void MoreInformation_Load(object sender, EventArgs e)
         {
             connection.Open();
-            string sql = "select sum(BNum) from books;";
-            MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
-            DataTable dt = new DataTable();
-            mda.Fill(dt);
-            lbBNum.Text = dt.Rows[0][0].ToString();
 
-            string sql1 = "select sum(Amount) from orders;";
-            MySqlDataAdapter mda1 = new MySqlDataAdapter(sql1, connection);
-            DataTable dt1 = new DataTable();
-            mda1.Fill(dt1);
-            lbPtotal.Text = dt1.Rows[0][0].ToString();
-
-            string sql2 = "select count(*) from users;";
-            MySqlDataAdapter mda2 = new MySqlDataAdapter(sql2, connection);
-            DataTable dt2 = new DataTable();
-            mda2.Fill(dt2);
-            lbPeople.Text = dt2.Rows[0][0].ToString();
-
-            string sql3 = "select users.UName from users where users.UId = " +
-                "(select orders.UId from orders group by orders.UId " +
-                "order by count(*) desc limit 1);";
-            MySqlDataAdapter mda3 = new MySqlDataAdapter(sql3, connection);
-            DataTable dt3 = new DataTable();
-            mda3.Fill(dt3);
-            lbName.Text = dt3.Rows[0][0].ToString();
+            Statistic_Cat();
+            Statistic_Order();
+            Highest_Amount();
+            Empty_User();
 
             connection.Close();
         }
 
-        private void btGoback_Click(object sender, EventArgs e)
+        private void Statistic_Cat()
         {
-            MoreInformation obj = new MoreInformation();
-            obj.Show();
-            this.Close();  
+            string sql = "select BCat, count(*) as BookCount from books group by BCat order by BookCount desc;";
+            MySqlDataAdapter mda = new MySqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            mda.Fill(dt);
+            CatView.DataSource = dt;
+        }
+
+        private void Statistic_Order()
+        {
+            string sql1 = "SELECT u.UId, u.UName, SUM(o.Amount) AS TotalOrderAmount FROM users u " +
+                "JOIN orders o ON u.UId = o.UId " +
+                "GROUP BY u.UId, u.UName " +
+                "ORDER BY TotalOrderAmount DESC;";
+            MySqlDataAdapter mda1 = new MySqlDataAdapter(sql1, connection);
+            DataTable dt1 = new DataTable();
+            mda1.Fill(dt1);
+            OrderView.DataSource = dt1;
+        }
+
+        private void Highest_Amount()
+        {
+            string sql2 = "SELECT u.UId, u.UName, o.BillId, o.Amount " +
+                "FROM users u " +
+                "JOIN orders o ON u.UId = o.UId " +
+                "WHERE o.Amount = (SELECT MAX(Amount) FROM orders);";
+            MySqlDataAdapter mda2 = new MySqlDataAdapter(sql2, connection);
+            DataTable dt2 = new DataTable();
+            mda2.Fill(dt2);
+            HighestView.DataSource = dt2;
+        }
+
+        private void Empty_User()
+        {
+            string sql3 = "SELECT UId,UName,UPhone FROM users " +
+                "WHERE UId NOT IN (SELECT UId FROM orders);";
+            MySqlDataAdapter mda3 = new MySqlDataAdapter(sql3, connection);
+            DataTable dt3 = new DataTable();
+            mda3.Fill(dt3);
+            NoOrderView.DataSource = dt3;
         }
 
         private void Shut_Click(object sender, EventArgs e)
